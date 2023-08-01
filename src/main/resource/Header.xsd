@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:recFixLengthFieldsFmt="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat">
+
+    <xsd:import namespace="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat" schemaLocation="FixedLengthFieldFormat.xsd"/>
+    <xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format encoding="{$dfdl:encoding}" escapeSchemeRef="" occursCountKind="fixed" ref="recFixLengthFieldsFmt:RecordFixLengthFieldsFormat"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+	<xsd:element dfdl:encoding="UTF-8" dfdl:lengthKind="delimited" ibmSchExtn:docRoot="true" name="StandardHeader">
+		<xsd:complexType>
+			<xsd:sequence dfdl:encoding="UTF-8" dfdl:separator="" dfdl:separatorSuppressionPolicy="anyEmpty">
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="3" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="Version" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="5" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="RequestID" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="3" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="RequestVersion" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="3" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="ReplyVersion" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="8" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="''" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="Options" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="20" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="UserID" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="20" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="Password" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="1" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="''" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="Debug" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="5" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="''" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="ReturnCode" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="5" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="''" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="ReplyID" nillable="false" type="xsd:string"/>
+                <xsd:element dfdl:encoding="UTF-8" dfdl:length="1" dfdl:lengthUnits="characters" dfdl:nilKind="literalValue" dfdl:nilValue="''" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" dfdl:useNilForDefault="no" name="ReplyContinuation" nillable="false" type="xsd:string"/>
+            </xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+</xsd:schema>

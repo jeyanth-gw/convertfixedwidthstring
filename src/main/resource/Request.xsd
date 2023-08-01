@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:recFixLengthFieldsFmt="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat">
+	<xsd:include schemaLocation="Header.xsd"/>
+	<xsd:import namespace="http://www.ibm.com/dfdl/RecordFixLengthFieldFormat" schemaLocation="FixedLengthFieldFormat.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format encoding="{$dfdl:encoding}" escapeSchemeRef="" occursCountKind="fixed" ref="recFixLengthFieldsFmt:RecordFixLengthFieldsFormat"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+	<xsd:element dfdl:encoding="UTF-8" dfdl:lengthKind="implicit" ibmSchExtn:docRoot="true" name="Request">
+		<xsd:complexType>
+			<xsd:sequence dfdl:encoding="UTF-8">
+				<xsd:element ref="StandardHeader"/>
+				<xsd:element dfdl:encoding="UTF-8" dfdl:lengthKind="implicit" name="RequestInfo">
+					<xsd:complexType>
+						<xsd:sequence dfdl:encoding="UTF-8">
+							<xsd:element dfdl:encoding="UTF-8" dfdl:length="14" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="Name" type="xsd:string"/>
+							<xsd:element dfdl:encoding="UTF-8" dfdl:length="4" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="ID" type="xsd:string"/>
+							<xsd:element dfdl:encoding="UTF-8" dfdl:length="10" dfdl:lengthUnits="characters" dfdl:textPadKind="padChar" dfdl:truncateSpecifiedLengthString="yes" name="Number" type="xsd:string"/>
+							
+							
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+</xsd:schema>
